@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, #f12711, #f5af19);
+    font-family: Montserrat, sans-serif;
+}
+
+.title {
+    margin-bottom:10px;
+    color: #fff;
+    padding: 0;
+    text-align: center;
+    font-size: 3rem;
+    font-family: Montserrat, sans-serif;
+}
+
+.container {
+    min-width: 400px;
+    position: relative;
+    color: #fff;
+    width: 38%;
+    height:650px;
+    border:none;
+    border-radius:10px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    box-shadow: 3px 3px 10px #000;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+    outline:none;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+}
+#city {
+    padding-top: 25px;
+    font-size: 2rem;
+}
+
+#temp {
+    padding-top: 7px 0;
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+#today {
+    font-size: 1rem;
+    padding: 0 10px;
+}
+
+
+.hourly {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(24, 1fr);
+    border-top: 1px solid rgba(255,255,255,.7);
+    border-bottom: 1px solid rgba(255,255,255,.7);
+    overflow: scroll;
+    overflow-y: hidden;
+    padding:10px;
+}
+
+.sticky{
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: .1px;
+    height: .01px;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+.hour {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.fa {
+    width: 100%;
+    height: 100%;
+}
+
+.days{
+    padding:10px;
+}
+
+.day{
+  display:grid;
+  grid-template-columns:35% 25% 25% 15%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary{
+    border-top: 1px solid rgba(255,255,255,.7);
+    border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+.summary p {
+    word-spacing: 2px;
+    padding:10px;    
+}
+
+.details > div {
+    border-bottom: 1px solid #fff;
+    display:flex;
+    justify-content:space-between;
+    padding:10px;
+}
+
+.details .box > div p:nth-child(1){
+    font-size:12px;
+    text-align: left;
+}
+
+.details .box > div p:nth-child(2){
+    font-weight: bold;
+}
+
+.dayN{
+    word-wrap: break-word;
+}
+.invisible{
+    display:none;
+}
