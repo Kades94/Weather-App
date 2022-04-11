@@ -147,7 +147,7 @@ if(navigator.geolocation) {
     lat = position.coords.latitude;
     long = position.coords.longitude;
     
-    const proxy ="https://cors-anywhere.herokuapp.com/";
+    const proxy ="https://corsanywhere.herokuapp.com/";
 
     //Fetch weather information from darksky api
     const api = `${proxy}https://api.darksky.net/forecast/ea1b7a85223b0df3d308b1541c08046b/${lat},${long}`;
@@ -186,12 +186,28 @@ if(navigator.geolocation) {
             hourIcon.setAttribute('class', 'fas fa-cloud-rain');
             hourWeather[i].appendChild(hourIcon);
           }
+          else if(data.hourly.data[i].icon.includes('snow')){
+            hourIcon.setAttribute('class', 'fas fa-snowflake');
+            hourWeather[i].appendChild(hourIcon);
+          }
+          else if(data.hourly.data[i].icon.includes('fog')){
+            hourIcon.setAttribute('class', 'fas fa-smog');
+            hourWeather[i].appendChild(hourIcon);
+          }
+          else if(data.hourly.data[i].icon.includes('wind')){
+            hourIcon.setAttribute('class', 'fas fa-wind');
+            hourWeather[i].appendChild(hourIcon);
+          }
           else if(data.hourly.data[i].icon.includes('day')){
             hourIcon.setAttribute('class', 'fas fa-sun');
             hourWeather[i].appendChild(hourIcon);
           }
           else if(data.hourly.data[i].icon.includes('night')){
             hourIcon.setAttribute('class', 'fas fa-moon');
+            hourWeather[i].appendChild(hourIcon);
+          }
+          else{
+            hourIcon.setAttribute('class', 'fas fa-cloud');
             hourWeather[i].appendChild(hourIcon);
           }
         });
@@ -234,7 +250,7 @@ if(navigator.geolocation) {
         });
       }
 
-    });
+    }).catch(function(error){console.log(error)})
   });
  }
 });
