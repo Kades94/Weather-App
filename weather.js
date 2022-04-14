@@ -160,7 +160,7 @@ if(navigator.geolocation) {
       summary.textContent = data.currently.summary;
       temp.textContent = data.currently.temperature.toFixed()+ 'º';
       wind.textContent = data.currently.windSpeed.toFixed()+'mph';
-      rain.textContent = data.daily.data[0].precipProbability * 100+'%';
+      rain.textContent = (data.daily.data[0].precipProbability * 100).toFixed()+'%';
       humidity.textContent = (data.currently.humidity* 100).toFixed()+'%';
       feelsLike.textContent = data.currently.apparentTemperature.toFixed();
       pressure.textContent = (data.currently.pressure/33.86).toFixed()+' in Hg';
